@@ -1,0 +1,88 @@
+nav
+{
+  border-bottom: 1px solid #000;
+}
+#container
+{
+  margin: 1em;
+}
+
+nav ul li
+{
+  display: inline;
+  width: auto;
+}
+
+nav ul li a
+{
+  text-decoration: none;
+  color: black;
+  margin-right: 1em;
+  padding-left: 1em;
+}
+
+.floatRight
+{
+  float: right;
+}
+
+
+
+table
+{
+	border-collapse: collapse;
+}
+
+td
+{
+	border: none;
+}
+
+tbody tr:nth-child(even) {background: green;}
+tbody tr:nth-child(odd) {background: #add8e6;}
+td {text-align: left;}
+
+#specificQuestionSelected
+{
+  color: red;
+}
+
+
+
+label.error
+{
+	color: red;
+}
+
+.instructions
+{
+	margin: 3%;
+}
+
+.instructions  ul, .instructions  ul  li  ul 
+{
+    margin: 0; padding: 0;
+}
+.instructions  ul  li  ul  li
+{
+	margin-left: 3%;
+}
+
+/**
+@media screen and (max-width: 1200px) 
+{
+   body 
+   {
+      width: 1200px;
+   }
+}
+
+@media screen and (min-width: 450px) 
+{
+  #userNameDiv, #passwordDiv
+  {
+    width: auto;
+    float: left;
+  }
+}
+*/

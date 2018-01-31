@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript"></script>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+	
+	<nav>
+	  <ul>
+	    <li><a href="#home" id="navHome">home</a></li>
+	    <li><a href="#specificQuestion" id="navSpecificQuestion">selected</a></li>
+	    <li><a href="#askQuestion" id="navAskQuestion">ask</a></li>
+	    <li><a href="#provideCredentials" id="navProvideCredentials">login</a></li>
+	    <li><a href="#register" id="navRegister">register</a></li>
+	    <li><a href="#yesterday" id="navYesterday">yesterday</a></li>
+	  </ul>
+	</nav>
+	
+	
+	<div id="container">
+	  <section><!-- main page-->
+	    <article id="home">
+	      <h1>
+	        here are today's questions.
+	      </h1>
+	      <div id="list_of_questions">
+	        <button id="questionsRefreshButton" type="button">refresh questions and answers</button>
+	        <div>
+	        	<span id="questionTableMessage"></span>
+	        </div>
+	        <table id="questionTable" >
+	          <thead>
+	            <tr>
+	              <th>Question</th>
+	            </tr>
+	          </thead>
+	          <tbody id="tableBodyQuestions">
+	          </tbody>
+	        </table>
+	      </div><!--end div/list_of_questions-->
+	      <div id="why" class="instructions">
+	      	<ul>
+	      		<li>why this site exists.
+	      			<ul>
+			      		<li>information changes.</li>
+			      		<li>yesterday's context changed.</li>
+			      		<li>tomorrow's context does not yet exist.</li>
+			      		<li>what's the answer today in today's context.</li> 
+		      		</ul>
+		      	</li>
+		      	<li>see a question of interest....
+		      		<ul>
+		      			<li>click on a question if it interests you.</li>
+		      			<li>see community-provided answers.</li>
+		      			<li>the number of votes for an answer displayed adjacently.</li>
+		      		</ul>
+		      	</li>
+		      	<li>post a question.
+		      		<ul>
+		      			<li>registered users post questions.</li>
+		      			<li>the community answers.</li>
+		      			<li>the community votes for answers.</li>
+		      		</ul>
+		      	</li>
+		      	<li>vote an answer.
+		      		<ul>
+		      			<li>registered users vote for answers.</li>
+		      			<li>see an answer and agree, click on the answer and vote for the answer.</li>
+		      			<li>registered users can provide an answer and see if the community agrees.</li>
+		      		</ul>
+		      	</li>
+		      	<li>why lowercase.
+		      		<ul>
+		      			<li>i m a colleague, get to the point, ask the question, get the answer.</li>
+		      			<li>the information is what is important.</li>
+		      			<li>the community votes on the integrity of the answer.</li>
+		      		</ul>
+		      	</li>
+	      	</ul>
+	      </div>
+	    </article>
+	    
+	    <article id="specificQuestion">
+	    	<div id="showSpecificQuestion">
+	      		<h1>
+	        		question selected.
+	        	</h1>
+	        	<div id="specificQuestionSelected"></div>
+	        	<input type='hidden' value='' id="specificQuestionSelectedId"/>
+	      		
+	      		<h3>
+	        		answers available at this time.
+	        	</h3>
+	        	<br />
+	        	<span id="answersToSpecificQuestionSelectedMessage"></span>
+	        	<div id="answersToSpecificQuestionSelected">
+	          		<table id="answerTable" >
+		            	<thead>
+		              		<tr>
+		                		<th>Answer</th>
+		              		</tr>
+		            	</thead>
+	            		<tbody id="tableBodyAnswers">
+	            		</tbody>
+	          		</table>
+	        	</div><!-- end div/answersToSpecificQuestionSelected-->
+	      
+	      		<form id="answerForm" action="">
+			      	
+			      	<label for="provideAnswer">Provide your answer.</label>
+		        	<br />
+		        	<textarea name="provideAnswer" id="provideAnswer"></textarea>
+		        	<br />
+		        	<span id="provideAnswerMessage"></span>
+		        	<br />
+		        	<button id="submitAnswerButton" type="button">submit answer</button>
+		      
+	      		</form>
+	      		
+	      		
+	      	</div>
+	      	<div id="hideSpecificQuestion">
+	      		<h3>please navigate to home, select question, and question and answers will display here. additionally, you can supply your own answer to a question.</h3>
+	      	</div>
+	    </article>
+	    <article id="askQuestion">
+	    	<h1>
+	        	ask your question
+	      	</h1>
+	      	<form id="questionForm">
+	      		<textarea id="inputQuestion" name="inputQuestion"></textarea>
+	      		<br />
+	      		<span id="inputQuestionMessage"></span>
+	      		<br />
+	      		<button id="submitQuestionButton" type="button">submit</button>
+	      	</form>
+	    </article>
+	    
+	    <article id="provideCredentials">
+	    	
+	    	<form id="loginForm" action="">
+		    	<span id="provideLoginMessage"></span>
+		      	<div id="userNameDiv">
+		        	<label for="userName">user name: </label>
+		        	<br />
+		        	<input type="email" id="userName" name="userName"/>
+		      	</div>
+		      	
+		      	<div id="passwordDiv">
+		        	<label for="password">password: </label>
+		        	<br />
+		        	<input type="password" id="password" name="password"/>
+		      	</div>
+		      	<button id="submitLoginButton" type="button">login</button>
+	      	</form>
+	      	
+	      	
+	      	
+	      	<div id="logininstructions"  class="instructions">
+	    		<ul>
+	    			<li>how to login.
+		    			<ul>
+				   			<li>enter user name used to register.</li>
+				   			<li>provide password.</li>
+				   			<li>click login.</li>
+				   		</ul>
+			   		</li>
+	    		</ul>
+	    	</div>
+	      	
+	      	<div id="headRoomChangePassword"></div>
+	      	
+	      	
+	      	
+	      	<span id="provideChangePasswordMessage"></span>
+	   		<form id="changePasswordForm" action="">
+		      	<div id="changePasswordUserNameDiv">
+		      		<label for="changePasswordUserName">user name: </label>
+		      		<br />
+		      		<input type="email" id="changePasswordUserName" name="changePasswordUserName"/>
+		      	</div>
+		      	<div id="changePasswordOldPasswordDiv">
+		      		<label for="changePasswordOldPassword">old password</label>
+		      		<br />
+		      		<input type="password" id="changePasswordOldPassword" name="changePasswordOldPassword"/>
+		      	</div>
+		      	<div id="changePasswordPasswordDiv">
+		      		<label for="changePasswordPassword">new password</label>
+		      		<br />
+		      		<input type="password" id="changePasswordPassword" name="changePasswordPassword"/>
+		      	</div>
+		      	<div id="changePasswordPasswordConfirmDiv">
+		      		<label for="changePasswordPasswordConfirm">confirm new password: </label>
+		      		<br />
+		      		<input type="password" id="changePasswordPasswordConfirm" name="changePasswordPasswordConfirm"/>
+		      	</div>
+		      	<button id="changePasswordButton" type="button">change password</button>
+	    	</form>
+	    	
+	    	<div id="changepasswordinstructions"  class="instructions">
+	      		<ul>
+	      			<li>how to change password.
+	      				<ul>
+			      			<li>enter user name used to register.</li>
+			      			<li>provide current password.</li>
+			      			<li>enter new password.</li>
+			      			<li>confirm new password.</li>
+			      			<li>click change password.</li>
+			      		</ul>
+			      	</li>
+	      		</ul>
+	      	</div>
+	      	
+	    </article>
+	    
+	    <article id="register">
+	    	
+	    	<span id="provideRegisterMessage"></span>
+	    	<form id="registerForm" action="">
+		      	<div id="registerUserNameDiv">
+		        	<label for="registerUserName">user name: </label>
+		        	<br />
+		        	<input type="email" id="registerUserName" name="registerUserName"/>
+		      	</div>
+		      	
+		      	<div id="registerPasswordDiv">
+		        	<label for="registerPassword">password: </label>
+		        	<br />
+		        	<input type="password" id="registerPassword" name="registerPassword"/>
+		      	</div>
+		      	<div id="registerPasswordConfirmDiv">
+		      		<label for="registerPasswordConfirm">confirm password: </label>
+		      		<br />
+		      		<input type="password" id="registerPasswordConfirm" name="registerPasswordConfirm"/>
+		      	</div>
+		      	<button id="submitRegisterButton" type="button">register</button>
+	      	</form>
+	      	
+	      	<div id="registerinstructions"  class="instructions">
+	      		<ul>
+	      			<li>how to register.
+	      				<ul>
+				    		<li>provide an email address you own for user name.</li>
+				    		<li>enter password.</li>
+			      			<li>confirm password.</li>
+			      			<li>click register.</li>
+				    		<li>upon successful submission, a validation email is sent.</li>
+				    		<li>within the validation email, click on the provided link to validate registration.</li>
+				    	</ul>
+				    </li>
+				    
+	    		</ul>
+	      	</div>
+	    </article>
+	    
+	    <article id="yesterday">
+	    	
+	      	<div id="yesterday_list_of_questions">
+		     	<span id="provideYesterdayMessage"></span>
+		    	<h1>
+		        	here are yesterday's questions.
+		      	</h1>
+		        
+		        <button id="yesterdayQuestionsRefreshButton" type="button">yesterday refresh questions and answers</button>
+		        
+		        <div>
+		        	<span id="yesterdayQuestionTableMessage"></span>
+		        </div>
+		        
+		        <table id="yesterdayQuestionTable" >
+		        	<thead>
+		            	<tr>
+		              		<th>Question</th>
+		            	</tr>
+		          	</thead>
+		          	<tbody id="yesterdayTableBodyQuestions">
+		          	</tbody>
+		       </table>
+	      </div><!--end yesterday div/yesterday_list_of_questions-->
+	      
+	      <div id="yesterday_list_of_answers">
+	      	<h3>selected question</h3>
+	      	
+	      	<span id="yesterdayQuestionDisplayAnswers"></span>
+	      	<br />
+	      	
+	      	<button id="displayYesterdayQuestions" type="button">return to yesterday's questions</button>
+	      	
+	      	<table id="yesterdayAnswerTable" >
+         		<thead>
+            		<tr>
+               			<th>Answer</th>
+             		</tr>
+           		</thead>
+          		<tbody id="yesterdayTableBodyAnswers">
+          		</tbody>
+        	</table>	
+	      
+	      </div><!-- end div/yesterday_list_of_answers -->
+	    	
+	    	<div id="yesterdaywhy"  class="instructions">
+	    		<ul>
+	    			<li>about yesterday....
+	    				<ul>
+			    			<li>yesterday's questions and answers displayed.</li>
+			    			<li>questions and answers remain for up to five days.</li>
+			    			<li>see what questions the community asked and how the community answered and voted.</li>
+			    		</ul>
+			    	</li>
+	    		</ul>
+	    	</div>
+	    	
+	    </article>
+	    
+	    <footer>
+	    	<div id="footer">
+	    		
+	    	</div>
+	    </footer>
+	    
+	  </section><!-- end of section/main page-->
+	</div>
+
+
+	
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.min.js"></script>
+	
+	<script src="js/ajax.js"></script>
+	<script src="js/object.js"></script>
+	<script src="js/variables.js"></script>
+	<script src="js/display.js"></script>
+	<script src="js/insertanswer.js"></script>
+	<script src="js/insertquestion.js"></script>
+	<script src="js/voteanswer.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/register.js"></script>
+	<script src="js/changepassword.js"></script>
+	<script src="js/getquestionsandvotecounts.js"></script>
+	<script src="js/getyesterdayquestionsandvotecounts.js"></script>
+	
+	<script src="js/builder.js"></script>
+	
+	<script src="js/validatequestion.js"></script>
+	<script src="js/validateanswer.js"></script>
+	<script src="js/validatechangepassword.js"></script>
+	<script src="js/validatelogin.js"></script>
+	<script src="js/validateregister.js"></script>
+	
+	<script src="js/index.js"></script>
+	<script src="js/binding.js"></script>
+</body>
+</html>
